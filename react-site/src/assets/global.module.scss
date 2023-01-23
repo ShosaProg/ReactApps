@@ -1,0 +1,77 @@
+.fadeIn {
+  animation: fadeIn 1000ms linear both;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.item {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  scroll-padding-top: 100px;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+
+.sectionHeader {
+  height: 10%;
+  padding: 0 16px 0 16px;
+  text-align: center;
+  display: inline;
+}
+
+.sectionTitle{
+  font-size: 3rem;
+  font-family: "Nico Moji";
+}
+
+.sectionBody {
+  margin-top: 2rem;
+}

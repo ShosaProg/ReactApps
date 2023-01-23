@@ -1,0 +1,187 @@
+.header {
+  background-color: rgba(0, 0, 0);
+  position: sticky;
+  z-index: 9999;
+  width: 100%;
+  height: 100px;
+  max-height: 9em;
+  transition: max-height 0.5s, opacity 0.5s, background 0.5s;
+  overflow: hidden;
+  text-align: center;
+  top: 0;
+}
+
+.body {
+  overflow: hidden;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.menu_list {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em 0;
+}
+
+.menu_item {
+  position: relative;
+  margin: 0.5em 0;
+}
+
+.menu_link {
+  display: block;
+  padding: 0.5em;
+  position: relative;
+  font-size: 1.6em;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.5s;
+  text-decoration: none;
+}
+
+.nav {
+  display: inline-block;
+  width: 66.6%;
+}
+
+.menu_item {
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
+  margin: 0 10px;
+}
+
+/*線の基点位置*/
+.menu_item::before,
+.menu_item::after {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  background: #0481a2;
+  /*線の形状*/
+  width: 0;
+  height: 2px;
+  /*アニメーションの指定*/
+  transition: all 0.2s linear;
+}
+
+.menu_item::before {
+  right: 0;
+  bottom: 0;
+}
+
+.menu_item::after {
+  left: 0;
+  top: 0;
+}
+
+/*線の基点位置2 spanタグ*/
+
+.menu_item span {
+  display: block;
+}
+
+.menu_item span::before,
+.menu_item span::after {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  background: #0481a2;
+  /*線の形状*/
+  width: 2px;
+  height: 0;
+  /*アニメーションの指定*/
+  transition: all 0.1s linear;
+}
+
+.menu_item span::before {
+  left: 0;
+  bottom: 0;
+}
+
+.menu_item span::after {
+  right: 0;
+  top: 0;
+}
+
+/*現在地とhoverした際の線の変化*/
+.menu_item.active::before,
+.menu_item.active::after,
+.menu_item:hover::before,
+.menu_item:hover::after {
+  width: 100%;
+}
+
+.menu_item:hover::after {
+  transition-delay: 0s; /*すぐ線を出現させる*/
+  transition-duration: 0.3s;
+}
+
+.menu_item:hover::before {
+  transition-delay: 0s; /*線の出現を0.3秒遅らせる*/
+  transition-duration: 0.3s;
+}
+
+.menu_item.active span::before,
+.menu_item.active span::after,
+.menu_item:hover span::before,
+.menu_item:hover span::after {
+  height: 100%;
+}
+
+.menu_item:hover span::before {
+  transition-delay: 0s; /*線の出現を0.5秒遅らせる*/
+  transition-duration: 0.3s;
+}
+
+.menu_item:hover span::after {
+  transition-delay: 0s; /*線の出現を0.2秒遅らせる*/
+  transition-duration: 0.3s;
+}
+
+.text {
+  font-size: 3rem;
+  color: white;
+}
+
+.page {
+  margin: 0 10px;
+  width: 350px;
+}
+
+.main {
+  // background: black;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.pagesWrapper {
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.pages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
